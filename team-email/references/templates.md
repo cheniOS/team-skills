@@ -31,9 +31,11 @@ Subject: [Project] Request for [Specific Information or Resource]
 
 Dear [Name],
 
-We are working on [task] and need [information or resource] to proceed with [next step].
+Could you please provide [information or resource] so that we can proceed with [next step]?
 
-Could you please provide the following?
+We are currently working on [task]. [Brief context needed to understand the request.]
+
+Required items:
 1. [Required item and expected format]
 2. [Required item and expected format]
 
@@ -72,6 +74,17 @@ Best regards,
 
 正式审批可改 `Approval Required` / `approve`，明确被审批的版本和范围；不把普通确认包装成批准。
 
+需要在方案间选择时，将编号确认点替换为以下决策模块；单项确认不必使用。收益、代价和建议必须来自已知需求与证据，未知项标待评估。
+
+Decision required: [Specific decision and scope]
+
+- Option A — [Approach]; Benefits: [Known benefit]; Trade-offs: [Known cost or constraint].
+- Option B — [Approach]; Benefits: [Known benefit]; Trade-offs: [Known cost or constraint].
+
+Recommendation: [Proposed option and evidence-based reason / Further assessment is needed before recommending an option].
+
+Could you please confirm [option or decision] [by the confirmed date, time and UTC offset, if provided]? This decision is needed to [dependent next step].
+
 ## 3. 澄清需求、规则或分工
 
 Subject: [Project] Clarification Required – [Specific Topic]
@@ -99,14 +112,14 @@ Subject: [Project] Issue – [Specific Symptom or Impact]
 
 Dear [Name or Team],
 
-We observed [specific issue] while [activity]. This is affecting [confirmed scope or impact].
+Could you please investigate [specific issue]? We observed it while [activity], and it is affecting [confirmed scope or impact].
 
 - Context: [Relevant process, document, system, version or environment]
 - Expected result: [Expected outcome]
 - Actual result: [Observed outcome]
 - Evidence: [Attachment, screenshot, example or reference]
 
-Could you please investigate [specific question] and advise on the next steps and expected resolution time?
+Please check [specific question] and share your findings and proposed next steps. If the resolution time is not yet known, please advise when the next investigation update can be provided.
 
 Thank you for your support.
 
@@ -140,12 +153,13 @@ Subject: [Project] Update on [Milestone, Task or Case Group]
 
 Dear [Name or Team],
 
-Here is the current status of [scope] as of [date].
+[One-sentence status summary of [scope], its confirmed impact and any action needed, as of [date].]
 
 - Completed: [Verified completed work]
 - In progress: [Current work and owner, if known]
 - Pending: [Dependency or decision required]
 - Next step: [Next action and confirmed target, if available]
+- Next update: [Confirmed update date, time and UTC offset, if provided]
 
 [If delayed: [Item] is delayed due to [confirmed reason]. The impact is [impact]. We are taking [action].]
 
@@ -157,6 +171,10 @@ Best regards,
 [Signature]
 
 未知完成日期标待确认，不承诺 tomorrow、SLA、退款、赔偿或上线时间。纯通知无对方动作时删请求段。
+
+周报或简短项目汇报可改为 `Progress / Plans / Problems` 三部分，每部分只保留少量相关事实；涉及阻塞时点明影响和所需协助。需要对方处理时保留独立行动项，纯告知写 `No action is required at this stage.`，前提是本次确为无需动作。不要将所有对外邮件都改成周报格式。
+
+延期或故障跟进时，区分已完成、进行中、待确认；已知原因与待查假设分开。只有用户提供了下一次更新时间才填写该项，否则请求对方提供更新安排；不把“将更新进展”写成“届时已修复”。
 
 ## 7. 交付、发布或完成通知
 
@@ -215,9 +233,9 @@ Subject: [Project] Follow-up – [Original Request or Topic]
 
 Dear [Name],
 
-I am following up on [request] shared on [date]. We are currently waiting for [specific input] to proceed with [next step].
+Could you please share the current status of [request] raised on [date]? We are waiting for [specific input] to proceed with [next step].
 
-Could you please share the current status and expected completion date?
+Please advise on the expected completion date or, if it is still being assessed, when the next update can be provided.
 
 [If relevant: This is affecting [confirmed milestone or impact]. Please let us know if support from another team is required.]
 
@@ -227,6 +245,8 @@ Best regards,
 [Signature]
 
 升级时增加事实时间线、实际影响和所需决策，不把未回复当失职，不擅自扩大收件范围。
+
+跨时区期限统一写为 `[DD Mon YYYY, HH:mm, UTC±HH:mm]` 等无歧义形式，未知时留待确认或省略；不在模板中默认承诺 24/48 小时响应。
 
 ## 10. 简短回复与拉人协作
 

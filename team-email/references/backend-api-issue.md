@@ -9,7 +9,7 @@
 3. 预期与实际：HTTP status、业务 code/message、关键返回字段或耗时及单位；两类状态不要混淆。例如 HTTP 200 也可能带业务失败码。
 4. 最小复现：必要前置条件、步骤、相关请求字段、必要 headers。不同环境对比时明确每组版本、条件和结果，不将不同请求当作严格同条件对照。
 5. 正文贴一组脱敏的请求/响应和少量相邻日志，保留同一次请求的关联关系。长日志放脱敏附件，并写出文件名、时间范围、行号（已核实时）或请求 ID。
-6. 明确请求：请核查什么、是否需确认契约/部署/配置、希望返回根因/方案/预计时间。仅在本次材料支持时报告复现频次、数量和影响范围。
+6. 明确请求：请核查什么、是否需确认契约/部署/配置、希望返回调查结果/方案/预计时间。解决时间未知时可请求下一次调查更新时间。区分已知根因与尚待验证的判断，仅在本次材料支持时报告复现频次、数量和影响范围。
 
 字段按实际需要取舍；资料不足用占位或在邮件外列待补项，不编造调用、日志、数据或定位。
 
@@ -37,7 +37,7 @@ Subject: [Project][Environment] API Issue – [Operation] Returns [HTTP Status /
 
 Dear [Team Name] Team,
 
-We observed [issue] when calling [operation]. This is affecting [confirmed scope]. Could you please investigate the request below?
+Could you please investigate [issue] when calling [operation]? This is affecting [confirmed scope]. The relevant request and evidence are provided below.
 
 Context:
 - Environment: [Environment]
@@ -85,7 +85,7 @@ Relevant log excerpt (sanitized):
 
 Attachment reference: [Sanitized file name], [time range and request ID / verified line range]. [Brief summary of additional evidence.]
 
-Could you please check [specific routing, contract, deployment or processing question] and share your findings, proposed next steps and expected resolution time?
+Please check [specific routing, contract, deployment or processing question] and share your findings and proposed next steps. If the resolution time cannot yet be confirmed, please advise when the next investigation update can be provided.
 
 Authentication credentials and unrelated personal information have been redacted.
 
@@ -101,3 +101,4 @@ Best regards,
 - 正文是否已含最小关键证据，完整脱敏附件是否有可搜索定位？
 - URL、headers、body、日志、截图、附件及引用是否仍含凭据或无关个人信息？
 - 占位值/脱敏值是否明确标记？是否错误地声称所有内容都已脱敏或附件已添加，而实际未核对？
+- 解决时间与下次更新时间是否区分？已确认的跟进安排是否写明日期、时间和当日 UTC 偏移，且没有凭空承诺？

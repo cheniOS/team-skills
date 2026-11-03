@@ -10,6 +10,8 @@
 - 默认生成完整英文发送稿及内容对应的中文核对稿。
 - 统一标题、行动请求、附件摘要、来源定位和签名。
 - 提供接口问题反馈模板及请求、响应、日志的脱敏规则。
+- 首段前置结论、影响及请求；方案决策列出取舍和有依据的推荐。
+- 跨时区明确日期、时间及 UTC 偏移；故障跟进区分修复时间与下一次进展更新时间。
 - 包含请求、确认、澄清、协查、评审、进度、交付、会议、跟进和简短回复等场景。
 - 默认只起草和检查邮件，不自动发送。
 
@@ -67,9 +69,20 @@
 - [场景模板与附件摘要](team-email/references/templates.md)
 - [接口问题与日志脱敏](team-email/references/backend-api-issue.md)
 - [通用示例与适用边界](team-email/references/observations.md)
+- [参考来源与采用范围](team-email/references/sources.md)
 - [安装包](downloads/team-email.zip)
 
 更新 Skill 后，应同步更新 `downloads/team-email.zip`，保持源文件与下载包一致。
+
+## 参考来源
+
+本 Skill 参考以下公开沟通框架，并按本工作流重新撰写规则和模板：
+
+- [Softaworks professional-communication](https://github.com/softaworks/agent-toolkit/tree/main/skills/professional-communication)：开发者邮件、读者适配、决策请求与异步沟通。
+- [Anthropic internal-comms](https://github.com/anthropics/skills/tree/main/skills/internal-comms)：按沟通目的选格式，采用可选的 Progress / Plans / Problems 进展结构。
+- [Rampstack stakeholder-communication](https://github.com/rampstackco/claude-skills/tree/main/skills/stakeholder-communication)：结论先行、业务影响、延期说明与明确决策请求。
+
+详细采用范围及调整见 [参考来源](team-email/references/sources.md)。这些是阅读参考，不是运行依赖；无需额外安装第三方 Skill。
 
 ## English
 
