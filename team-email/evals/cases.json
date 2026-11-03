@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "note": "全部人物、域名、文件名、日期、数据和场景均为虚构；不调用接口或执行外部动作。checks仅供评估者在生成后判定，不预先提供给执行者。",
+  "cases": [
+    {
+      "id": "body-only-score",
+      "request": "使用 $team-email，检查、最小修改并给原文打分。下面只有正文；主题和签名由现有线程及客户端保留。仅要英文改稿，说明用中文。\nDear Alex,\nWe observed that the search result is empty in UAT. Could you please confirm whether an empty result is expected when categoryId is null?\nRequest: POST https://api.example.com/v1/search\n{\"categoryId\":null,\"page\":\"1\"}\nResponse — relevant fields only:\n{\"responseCode\":\"200\",\"data\":[]}\nBest regards,",
+      "checks": [
+        "使用五维各20分量表及逐笔扣分依据；标题项N/A，展示适用满分并正确折算。",
+        "不因签名、期限、缺中文或HTTP状态未提供而机械扣分；无关未知放待核对。",
+        "只给英文改稿；不把字符串page改成数字，不把业务200改成HTTP200。",
+        "局部修改，保留null条件、原有请求和唯一确认问题。"
+      ]
+    },
+    {
+      "id": "technical-conflicts",
+      "request": "使用 $team-email，检查并修改这封邮件，默认处理。\nSubject: Re: Image mapping clarification\nDear Morgan,\nWe retrieve image IDs from GET https://api.example.com:8443/v2/images/list in UAT. Our current request template for POST https://api.example.com:8443/v2/images/fetch is:\n{\"imageId\":\"placeholder\",\"layout\":\"WIDE\"}\nAn image request example is:\n{\"imageId\":\"7\",\"layout\":\"WIDE\"}\nThe two card categories both returned artWorkId=\"7\". We therefore suspect that their images may be identical. Could you please confirm whether the shared ID is expected and how each category should retrieve its image?\nThe following log was captured in STG:\nrequestId=fixture-log-b path=/v2/images/fetch businessCode=200\nThe UAT response example is:\n{\"requestId\":\"fixture-request-a\",\"responseCode\":\"200\",\"image\":\"<omitted>\"}\nBest regards,\nTaylor",
+      "checks": [
+        "不把placeholder静默替换为7，保留示例与模板语境，外列差异。",
+        "保留8443端口、UAT/STG差异及两个不同requestId；不合并成同一次调用。",
+        "保留Re主题；不擅自补HTTP200、列表响应或确定根因。",
+        "不主动打分；默认完整EN/CN对照，问题与技术值对应，指出共享ID不足以证明图像相同。"
+      ]
+    },
+    {
+      "id": "receipt-only",
+      "request": "使用 $team-email，帮我回复 Alex：已收到 Design_Review.pdf。只是确认收到。保留原主题 Re: Design review。只要英文。",
+      "checks": [
+        "简短确认收到，沿用主题，不新增will review、评审日期、批准或其他承诺。",
+        "不追问发件岗位、邮箱或签名，不生成中文稿或评分。"
+      ]
+    },
+    {
+      "id": "privacy-and-correlation",
+      "request": "使用 $team-email，最小修改以下邮件，提供中英两稿。全部样例数据均为虚构。\nSubject: API lookup issue\nDear API Team,\nCould you please investigate this lookup failure? The identifier length may be relevant: both customerId values below contain 12 digits. Expected: the requested record is returned. Actual: HTTP 200, business code RECORD_NOT_FOUND.\nPOST https://api.example.com/v1/lookup\nAuthorization: Bearer <DUMMY_SECRET_FOR_TEST>\nRequest A:\n{\"customerId\":\"000000000012\",\"email\":\"user-a@example.com\",\"requestId\":\"fixture-a\"}\nResponse A:\n{\"code\":\"RECORD_NOT_FOUND\",\"requestId\":\"fixture-b\"}\nRequest B:\n{\"customerId\":\"000000000034\",\"email\":\"user-b@example.com\",\"requestId\":\"fixture-c\"}\nPlease share your findings.\nBest regards,\nTaylor",
+      "checks": [
+        "认证值完整移除或替换，邮件正文不重复DUMMY_SECRET；两个不同customerId用不同且一致的代号。",
+        "保留原始12位这一问题条件；说明脱敏示例不可直接重放，删去无关邮箱。",
+        "requestId fixture-a/fixture-b不伪装匹配；列关联冲突，不能拼成同一次调用。",
+        "保留HTTP200与业务RECORD_NOT_FOUND区别；双语值一致，无新增修复承诺。"
+      ]
+    },
+    {
+      "id": "attachment-unavailable-review",
+      "request": "使用 $team-email，只检查并给原文评分，不改稿。仅提供正文；附件没有提供给你，尚未附到邮箱，签名由客户端添加。\nDear Jordan,\nPlease review the proposed notification rules in Notification_Rules.pdf, section 2, and confirm whether reminders should be sent once per day. The proposed scope covers email reminders only; push notifications are excluded.\nThe document is attached for your review.\nBest regards,",
+      "checks": [
+        "只审查和评分，不生成英文或中文改稿。",
+        "指出已attached声明与已知未附状态冲突；不宣称核实section2内容，也不编造附件摘要。",
+        "标题N/A，附件内容核验列待核对；缺附件导致已知错误声明仍应评估，不能整体N/A掩盖。",
+        "每笔扣分用检查项编号列明，每项最多扣5分；明细、五维实得/适用满分与折算总分一致；不因客户端签名扣分。"
+      ]
+    },
+    {
+      "id": "bilingual-commitment-score",
+      "request": "使用 $team-email，检查这两份邮件并给原文打分，不需要改稿。\nSubject: Verification update\nDear Alex,\nThe backend team reports that the fix has been deployed to UAT. QA verification is pending. We cannot yet confirm the resolution date. Could you please share the verification result?\nBest regards,\nTaylor\n\n中文核对稿：\n标题：验证进展\nAlex，你好：\n后端团队确认修复已部署至 UAT，QA 已验证通过，问题将于 12 Nov 2030 解决。请提供验证结果。\n此致，\nTaylor",
+      "checks": [
+        "发现pending与已验证通过、无法确认日期与确定解决日期两处实质差异。",
+        "不把UAT部署当作QA通过或解决承诺；关键矛盾单列发送前必须处理，不由高分抵消。",
+        "仅检查与评分，未生成改稿；扣分有检查项编号与原文依据，同属D4的多处双语差异合计最多扣5分，不跨项重复扣。"
+      ]
+    },
+    {
+      "id": "rewrite-verification",
+      "request": "使用 $team-email，重组为一封清楚的英文邮件，并给完整中文核对稿。发给 QA 团队。原要点：后端 Sam 报告修复已部署 UAT；QA 尚未复测；生产环境状态未知。请 QA 复测搜索空结果问题，预期为 categoryId=null 时返回全部分类。原主题 Re: Search empty result。",
+      "checks": [
+        "按重写模式组织但保留回复主题和事实；请求QA复测，不宣布关闭或生产已修复。",
+        "来源归于Sam，不虚构工单、版本、截止日期、已附报告或发件岗位。",
+        "两份完整对应，不无故评分，不为岗位、签名等非关键缺项阻断成稿。"
+      ]
+    }
+  ]
+}

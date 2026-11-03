@@ -8,8 +8,10 @@
 
 - 根据发件角色、收件对象和邮件目的选择场景；只询问必要的缺失信息。
 - 默认生成完整英文发送稿及内容对应的中文核对稿。
+- 支持只检查、固定五维评分、最小修改和结构重写；已有草稿默认最小修改，评分附扣分依据及待核对范围。
 - 统一标题、行动请求、附件摘要、来源定位和签名。
 - 提供接口问题反馈模板及请求、响应、日志的脱敏规则。
+- 核对技术值、字段类型、调用关联和正文结论；保留冲突待确认，精简报文时明确标为相关字段摘录。
 - 首段前置结论、影响及请求；方案决策列出取舍和有依据的推荐。
 - 跨时区明确日期、时间及 UTC 偏移；故障跟进区分修复时间与下一次进展更新时间。
 - 区分决策人、执行人、协作人和知情人，按技术同事、管理者、业务客户或外部合作方调整表达。
@@ -59,6 +61,14 @@
 
 信息足够时直接生成；缺少关键需求时先提问。日志和附件应先移除凭据、无关个人信息及其他不应共享的内容，再提供给工具处理。
 
+```text
+使用 $team-email，检查并给以下原文评分，按最小修改模式修改。
+保留技术值和原有问题顺序，给英文发送稿及完整中文核对稿。
+邮件：……
+```
+
+只需点评时写“只检查，不改稿”；希望调整结构时写“重写/重组”。评分采用目的与行动、结构与定位、事实与证据、语言与一致性、隐私与共享五维，各 20 分。不适用或无法核实项标 N/A，按适用满分折算，并列出扣分依据。高分不替代发送前的关键问题处理；详见审查指南。
+
 ## 内容边界
 
 仓库内示例使用占位符或明确虚构内容，不包含真实邮件来源、联系信息、公司内部链接、实际项目版本或原始业务附件。规范不代表任何公司的官方制度；实际使用须遵从所在团队的流程。
@@ -69,6 +79,8 @@
 
 - [Skill 入口](team-email/SKILL.md)
 - [场景模板与附件摘要](team-email/references/templates.md)
+- [审查、评分与最小修改](team-email/references/review-and-scoring.md)
+- [虚构行为评估用例](team-email/evals/cases.json)
 - [收件角色与事项选择](team-email/references/audiences-and-scenarios.md)
 - [接口问题与日志脱敏](team-email/references/backend-api-issue.md)
 - [通用示例与适用边界](team-email/references/observations.md)
@@ -89,4 +101,4 @@
 
 ## English
 
-Reusable team collaboration skills. **team-email** drafts professional emails with matching English and Chinese versions, role-aware templates, attachment summaries, and API/log redaction guidance. Extract the ZIP into `~/.agents/skills/`, then invoke `$team-email` in Codex. It drafts and reviews text; it does not send email automatically.
+Reusable team collaboration skills. **team-email** drafts professional emails with matching English and Chinese versions, role-aware templates, attachment summaries, and API/log redaction guidance. It also supports evidence-based scoring, minimal editing, and technical evidence checks. Extract the ZIP into `~/.agents/skills/`, then invoke `$team-email` in Codex. It drafts and reviews text; it does not send email automatically.

@@ -259,14 +259,16 @@ Best regards,
 
 保留原 Subject，以下每次只选一种。
 
-收到但尚未评审：
+仅确认收到：
 
 Dear [Name],
 
-Thank you. We have received [material] and will review [scope].
+Thank you. We have received [material].
 
 Best regards,
 [Signature]
+
+用户明确表示将评审时，才可补 `We will review [scope].`；回复时间也仅使用用户已确认的安排。确认收到不自动包含评审、批准或修复承诺。
 
 明确确认：
 
