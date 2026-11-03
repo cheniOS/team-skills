@@ -50,6 +50,8 @@ Best regards,
 
 已知期限时，将预计时间请求替换为 `Could you please provide these by [date, time and time zone] so that we can [reason]?`。
 
+求助时可补 `We have tried [approach], which resulted in [observed outcome].` 和 `If another team owns this area, could you please advise whom we should contact?`，前提是确有尝试记录或责任范围不明确；不要编造尝试、联系名单或预估耗时。
+
 ## 2. 确认、审批或方案选择
 
 Subject: [Project] Confirmation Required – [Specific Topic]
@@ -155,6 +157,7 @@ Dear [Name or Team],
 
 [One-sentence status summary of [scope], its confirmed impact and any action needed, as of [date].]
 
+- Status: [On track / At risk / Off track, only when supported; otherwise omit or state that assessment is pending]
 - Completed: [Verified completed work]
 - In progress: [Current work and owner, if known]
 - Pending: [Dependency or decision required]
@@ -175,6 +178,8 @@ Best regards,
 周报或简短项目汇报可改为 `Progress / Plans / Problems` 三部分，每部分只保留少量相关事实；涉及阻塞时点明影响和所需协助。需要对方处理时保留独立行动项，纯告知写 `No action is required at this stage.`，前提是本次确为无需动作。不要将所有对外邮件都改成周报格式。
 
 延期或故障跟进时，区分已完成、进行中、待确认；已知原因与待查假设分开。只有用户提供了下一次更新时间才填写该项，否则请求对方提供更新安排；不把“将更新进展”写成“届时已修复”。
+
+面向管理层时保留主要成果、目标/实际差异、关键风险和所需决定，细节链接到报告；面向执行团队时增加行动负责人及证据。数据不足时不填写进度百分比、成本或趋势判断。
 
 ## 7. 交付、发布或完成通知
 
@@ -197,6 +202,8 @@ Best regards,
 [Signature]
 
 已验证完成才用 `Completion – [Milestone]`，有发布证据才说 released/deployed。可加简短团队致谢；避免标题重复堆叠信息。
+
+发布告知可加“变化是什么、影响谁、收件人是否需操作、去哪里查说明/反馈”，只填写已知信息。回滚方案、支持人、使用培训和发布时间均不得自行补造；纯告知且无需响应时可明确说明。
 
 ## 8. 会议安排与纪要
 
@@ -280,6 +287,73 @@ Best regards,
 [Signature]
 
 只有用户给出确认结论或明确授权表达该结论时才用确认模板；不能把“收到”写成确认或批准。
+
+## 11. 协作引介与职责交接
+
+简短引介可用 `Subject: [Project] Introduction – [Person or Team]`，说明介绍谁、与本事项相关的职责以及希望双方如何协作；职责尚未确认时表明为拟议安排，不默认要求所有人回复。
+
+交接模板：
+
+Subject: [Project] Handover – [Workstream]
+
+Dear [Name or Team],
+
+Could you please review the handover of [scope] and confirm [receipt / acceptance of the proposed responsibilities, as applicable]?
+
+- Current status: [Verified status and completed work]
+- Open items: [Unfinished tasks, blockers and known dependencies]
+- Responsibilities: [Confirmed or proposed outgoing/incoming owners, clearly distinguished]
+- Materials: [Document, ticket or artifact references]
+- Effective date or condition: [Confirmed date/condition / Pending confirmation]
+
+Please let us know which items need clarification and whether the proposed handover can be accepted. [Include only if acceptance is still pending.]
+
+Best regards,
+[Signature]
+
+接收文件与接受职责分开表述；待接受的交接不写成已完成。若涉及权限，只说明通过已有受控流程提供所需访问，不在邮件放凭据、不自动授权或移交账号。
+
+## 12. 需求、范围或排期变更
+
+Subject: [Project] Change Request – [Scope or Milestone]
+
+Dear [Decision Maker],
+
+Could you please review the proposed change to [scope or milestone]? [Brief confirmed impact or reason.]
+
+- Baseline: [Previously confirmed scope, version or date, with reference]
+- Proposed change: [Specific before/after difference]
+- Reason: [Known reason]
+- Impact: [Confirmed effects on users, dependencies, effort or schedule; identify estimates and unknowns]
+- Recommendation: [Evidence-based recommendation, if available]
+
+Please confirm [specific decision]. Until this is confirmed, [state only the current arrangement explicitly provided by the user].
+
+Best regards,
+[Signature]
+
+若本次是已批准变更的通知，将标题改为 `Change Notice`，正文注明已核实的决定与生效范围，并写受影响人员需要执行的动作；不能将提议写成批准。原基线未知且影响决策时询问，非关键未知字段可省略或在邮件外标待补。未给出预算或审批前执行安排时，不为这些缺项新增正文栏；删除 `Until this is confirmed` 句，不默认声称暂停工作或继续原计划。
+
+## 13. 修复验证与问题关闭
+
+Subject: [Project][Environment] Verification Required – [Issue or Ticket]
+
+Dear [Verifier or Team],
+
+[Reported or verified fix/deployment status, attributed to its source]. Could you please verify [specific behavior and scope]?
+
+- Reference: [Issue/ticket and affected version/environment]
+- Validation requested: [Checks and expected results supported by the original issue or agreed criteria]
+- Evidence available: [Fix/deployment reference or existing test evidence]
+- Current verification status: [Not yet tested / In progress / Actual verified result]
+- Remaining items: [Known open points, if any]
+
+Please share the verification result and supporting evidence. [Include a confirmed date/time/UTC offset only if supplied.]
+
+Best regards,
+[Signature]
+
+仅当有对应验证结果且关闭结论得到本次材料支持时，才改为 `Closure Confirmation – [Issue]`，说明验证的版本、环境、范围、证据和仍适用的限制。后端报告“已修复/已部署”不等于 QA 复测通过，UAT 验证不等于生产验证；材料不足时起草验证请求或标明关闭待确认，不能自行宣布关闭。
 
 ## 调用示例
 

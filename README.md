@@ -12,7 +12,9 @@
 - 提供接口问题反馈模板及请求、响应、日志的脱敏规则。
 - 首段前置结论、影响及请求；方案决策列出取舍和有依据的推荐。
 - 跨时区明确日期、时间及 UTC 偏移；故障跟进区分修复时间与下一次进展更新时间。
-- 包含请求、确认、澄清、协查、评审、进度、交付、会议、跟进和简短回复等场景。
+- 区分决策人、执行人、协作人和知情人，按技术同事、管理者、业务客户或外部合作方调整表达。
+- 包含请求、确认、澄清、协查、评审、进度、交付、会议、跟进、短回复、引介交接、变更、验证关闭等 13 类场景。
+- 项目汇报强调结果、实际影响及有依据的状态；收到、批准、部署、复测和关闭分别表述。
 - 默认只起草和检查邮件，不自动发送。
 
 ## 下载与安装
@@ -67,6 +69,7 @@
 
 - [Skill 入口](team-email/SKILL.md)
 - [场景模板与附件摘要](team-email/references/templates.md)
+- [收件角色与事项选择](team-email/references/audiences-and-scenarios.md)
 - [接口问题与日志脱敏](team-email/references/backend-api-issue.md)
 - [通用示例与适用边界](team-email/references/observations.md)
 - [参考来源与采用范围](team-email/references/sources.md)
