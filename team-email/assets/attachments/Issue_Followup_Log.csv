@@ -1,0 +1,3 @@
+FollowupID,OriginalRequestReference,LastConfirmedStatus,RemainingQuestion,DependencyImpact,ActionOwner,RequestedResponseBy,NextInvestigationUpdate
+FUP-01,[Thread/date/issue],[Status and source],[Specific point],[Confirmed impact],[Action owner],[Requested response deadline],[Confirmed update or unknown]
+FUP-02,[Thread/date/issue],[Status and source],[Specific point],[Confirmed impact],[Action owner],[Requested response deadline],[Confirmed update or unknown]

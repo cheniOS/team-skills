@@ -1,0 +1,3 @@
+ItemID,WorkItem,Status,VerifiedOutcome,EvidenceReference,Owner,NextStep,ConfirmedTarget
+UPD-01,[Deliverable],[Verified status],[Actual outcome],[File/section or case ID],[Known owner],[Next action],[Confirmed target or remove]
+UPD-02,[Dependency],[Actual status],[Known impact],[Source reference],[Known owner],[Next action],[Confirmed target or remove]

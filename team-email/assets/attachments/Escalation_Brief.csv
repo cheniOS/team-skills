@@ -1,0 +1,3 @@
+EntryID,EntryType,DateTimeUTCOffset,FactOrDecision,EvidenceReference,ConfirmedImpact,ResponsibleOwner
+ESC-01,Fact,[Known event time],[Observed impact],[Source reference],[Verified dependency impact],[Known action owner]
+ESC-02,Decision request,[Requested response time],[Specific decision],[Supporting reference],[Decision dependency],[Known decision owner]
