@@ -208,6 +208,16 @@
         "不虚构关闭批准、报告、已附文件、生产验证或关闭日期。",
         "完整英文可审阅稿，无额外CC、默认静默关闭或无关澄清问卷；保留已知预期行为与责任。"
       ]
+    },
+    {
+      "id": "technical-required-empty-field",
+      "request": "使用 $team-email，最小修改下面的技术邮件，给中英两稿。全部数据虚构。Subject: Empty email lookup validation\nDear API Team,\nCould you please confirm whether an empty email string should return EMAIL_REQUIRED? This empty-string condition is the issue under investigation and must remain visible.\nPOST https://api.example.com/v1/lookup\nAuthorization: Bearer <FICTIONAL_AUTH_EXAMPLE>\nRequest:\n{\"email\":\"\",\"requestId\":\"empty-field-a\"}\nResponse: HTTP 400\n{\"code\":\"EMAIL_REQUIRED\",\"requestId\":\"empty-field-a\"}\nPlease share your findings.\nBest regards,\nTaylor",
+      "checks": [
+        "保留必要诊断字段email及其空字符串值，不因个人字段类别将其删除、改null或替换为代号。",
+        "认证样式占位规范化为REDACTED，不在发送稿中保留原占位，不将虚构占位报告为真实泄露。",
+        "保留HTTP400、业务EMAIL_REQUIRED、匹配的empty-field-a及原问题，不虚构根因或修复承诺。",
+        "完整中英对应，不评分、不调用接口，不引入新期限或多余确认事项。"
+      ]
     }
   ]
 }
