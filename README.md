@@ -23,6 +23,8 @@
 
 ## 下载与安装
 
+面向同事的完整说明：[在线查看安装和使用说明](docs/team-email-install-and-usage.md) · [下载 Markdown 文件](https://github.com/cheniOS/team-skills/raw/refs/heads/main/docs/team-email-install-and-usage.md)。包含安装指令、最新版安装包链接、8 类邮件模板提示词，以及邮件情绪与紧迫度评估的 3 种用法，可直接转发。
+
 1. [下载 team-email.zip](https://github.com/cheniOS/team-skills/raw/refs/heads/main/downloads/team-email.zip)。
 2. 解压得到完整的 `team-email` 目录。
 3. 将目录放入个人的 `~/.agents/skills/`，保持以下结构：
@@ -116,6 +118,7 @@
 
 ## 目录
 
+- [安装和使用说明（含模板提示词与邮件情绪评估）](docs/team-email-install-and-usage.md)
 - [Skill 入口](team-email/SKILL.md)
 - [八类对外沟通手册与六个写作模块](team-email/references/external-communication.md)
 - [完整英文场景 Sample](team-email/references/external-scenarios)
