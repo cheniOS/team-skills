@@ -7,7 +7,8 @@
 适用于产品、后端开发、App 开发、测试、QA、设计、项目管理及客服等岗位。
 
 - 根据发件角色、收件对象和邮件目的选择场景；只询问必要的缺失信息。
-- 默认生成完整英文发送稿及内容对应的中文核对稿。
+- 分析来信的情绪倾向、原文依据、判断把握、紧迫度和回复策略；区分最新正文与历史引用，只分析时不自动生成回复稿。
+- 起草或修改时，默认生成完整英文发送稿及内容对应的中文核对稿。
 - 支持只检查、固定五维评分、最小修改和结构重写；已有草稿默认最小修改，评分附扣分依据及待核对范围。
 - 统一标题、行动请求、附件摘要、来源定位和签名。
 - 提供接口问题反馈模板及请求、响应、日志的脱敏规则。
@@ -17,7 +18,7 @@
 - 区分决策人、执行人、协作人和知情人，按技术同事、管理者、业务客户或外部合作方调整表达。
 - 包含请求、确认、澄清、协查、评审、进度、交付、会议、跟进、短回复、引介交接、变更、验证关闭等 13 类场景。
 - 项目汇报强调结果、实际影响及有依据的状态；收到、批准、部署、复测和关闭分别表述。
-- 默认只起草和检查邮件，不自动发送。
+- 按请求分析、起草和检查邮件，不自动发送或修改邮箱。
 
 ## 下载与安装
 
@@ -69,6 +70,13 @@
 
 只需点评时写“只检查，不改稿”；希望调整结构时写“重写/重组”。评分采用目的与行动、结构与定位、事实与证据、语言与一致性、隐私与共享五维，各 20 分。不适用或无法核实项标 N/A，按适用满分折算，并列出扣分依据。高分不替代发送前的关键问题处理；详见审查指南。
 
+```text
+使用 $team-email，分析以下来信的情绪倾向，列出原文依据、判断把握（高/中/低）、紧迫度和回复建议。区分最新正文与历史引用，只分析，不生成回复稿。
+邮件：……
+```
+
+有已授权且身份匹配的邮件工具时，也可以明确要求“读取我收件箱最近 5 封邮件并按上述字段分析”。本 Skill 不提供邮箱连接或 OAuth 配置，没有工具时需提供正文。语气分析不证明真实心理；紧迫度单独判断，不把催促直接当作不满。
+
 ## 内容边界
 
 仓库内示例使用占位符或明确虚构内容，不包含真实邮件来源、联系信息、公司内部链接、实际项目版本或原始业务附件。规范不代表任何公司的官方制度；实际使用须遵从所在团队的流程。
@@ -80,6 +88,7 @@
 - [Skill 入口](team-email/SKILL.md)
 - [场景模板与附件摘要](team-email/references/templates.md)
 - [审查、评分与最小修改](team-email/references/review-and-scoring.md)
+- [来信情绪、紧迫度与回复策略分析](team-email/references/incoming-analysis.md)
 - [虚构行为评估用例](team-email/evals/cases.json)
 - [收件角色与事项选择](team-email/references/audiences-and-scenarios.md)
 - [接口问题与日志脱敏](team-email/references/backend-api-issue.md)
@@ -101,4 +110,4 @@
 
 ## English
 
-Reusable team collaboration skills. **team-email** drafts professional emails with matching English and Chinese versions, role-aware templates, attachment summaries, and API/log redaction guidance. It also supports evidence-based scoring, minimal editing, and technical evidence checks. Extract the ZIP into `~/.agents/skills/`, then invoke `$team-email` in Codex. It drafts and reviews text; it does not send email automatically.
+Reusable team collaboration skills. **team-email** analyzes incoming email tone, quoted evidence, confidence, urgency, and reply strategy. It also drafts professional emails with matching English and Chinese versions, role-aware templates, attachment summaries, and API/log redaction guidance, and supports evidence-based scoring, minimal editing, and technical evidence checks. Analysis-only requests do not produce reply drafts. Extract the ZIP into `~/.agents/skills/`, then invoke `$team-email` in Codex. Mailbox access requires a separately available authorized tool; the skill does not send email or modify the mailbox automatically.
