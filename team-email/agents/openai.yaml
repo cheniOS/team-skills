@@ -1,4 +1,4 @@
 interface:
   display_name: "团队邮件规范"
-  short_description: "覆盖产品、开发、测试与 QA 的团队邮件规范，提供中英双稿、附件摘要及场景模板"
-  default_prompt: "使用 $team-email，根据我提供的信息起草英文发送稿，并给出内容对应的中文核对稿。"
+  short_description: "分析来信语气、原文依据、判断把握与回复策略，支持邮件审查、最小修改和中英双稿"
+  default_prompt: "使用 $team-email，按我的要求分析来信或起草、检查和修改邮件；仅分析时给依据、判断把握、紧迫度和回复建议，成稿默认英文及中文核对稿。"
