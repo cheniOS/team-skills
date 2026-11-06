@@ -1,0 +1,3 @@
+ReviewID,DeliverableVersionReference,ReviewPoint,RequiredResponse,Reviewer,RequestedResponseBy,CommentsOrAnswer,ConfirmationStatus
+REV-01,[File/version/section],[Review scope],[Comments or required changes],[Reviewer],[Requested response deadline],Pending response,Pending review
+REV-02,[File/version/section],[Rule or scope],[Confirm or identify changes],[Confirmation owner],[Requested response deadline],Pending response,Pending confirmation

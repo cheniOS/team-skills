@@ -1,0 +1,3 @@
+RequestID,RequiredInformation,FormatOrScope,Purpose,Provider,RequestedResponseBy,ResponseOrReference
+REQ-01,[Required item 1],[Scope and format],[Dependent activity],[Information owner],[Requested response deadline],Pending response
+REQ-02,[Required item 2],[Required fields],[Dependent activity],[Information owner],[Requested response deadline],Pending response

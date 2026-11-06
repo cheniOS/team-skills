@@ -7,6 +7,7 @@
 适用于产品、后端开发、App 开发、测试、QA、设计、项目管理及客服等岗位。
 
 - 根据发件角色、收件对象和邮件目的选择场景；只询问必要的缺失信息。
+- 提供八类对外沟通的标准场景包：流程阶段、发送时机、To/CC、准备资料、反馈要求、完整英文邮件、CSV 附件 Sample、写作解读和注意事项。
 - 分析来信的情绪倾向、原文依据、判断把握、紧迫度和回复策略；区分最新正文与历史引用，只分析时不自动生成回复稿。
 - 起草或修改时，默认生成完整英文发送稿及内容对应的中文核对稿。
 - 支持只检查、固定五维评分、最小修改和结构重写；已有草稿默认最小修改，评分附扣分依据及待核对范围。
@@ -30,14 +31,44 @@
 ~/.agents/skills/team-email/
 ├── SKILL.md
 ├── agents/openai.yaml
-└── references/
+├── references/
+├── assets/attachments/
+└── evals/cases.json
 ```
 
-也可从本仓库复制 [team-email](team-email) 完整目录。需要保留 `references` 和 `agents`，不要只复制 `SKILL.md`。
+也可从本仓库复制 [team-email](team-email) 完整目录。需要保留 `references`、`assets` 和 `agents`，不要只复制 `SKILL.md`。`assets/attachments` 中的 8 份 CSV 是可填写的附件模板，不是实际业务证据或已附文件。
 
 安装后在 Codex 中使用 `$team-email`。若未识别，重启 Codex。安装位置和调用方式参见 [Codex 官方文档](https://learn.chatgpt.com/docs/build-skills)。
 
 ## 使用示例
+
+对外沟通可先打开[对外沟通手册](team-email/references/external-communication.md)，选择以下类型：
+
+| Communication Type | 场景与完整英文 Sample |
+| --- | --- |
+| Information Request | [信息或资料请求](team-email/references/external-scenarios/01-information-request.md) |
+| Clarification | [问题澄清](team-email/references/external-scenarios/02-clarification.md) |
+| Progress Update | [工作进展汇报](team-email/references/external-scenarios/03-progress-update.md) |
+| Issue Follow-up | [问题跟进与催办](team-email/references/external-scenarios/04-issue-follow-up.md) |
+| Issue Escalation | [重要问题升级](team-email/references/external-scenarios/05-issue-escalation.md) |
+| Review & Confirmation | [评审与确认](team-email/references/external-scenarios/06-review-confirmation.md) |
+| Delivery & Acceptance | [交付与验收](team-email/references/external-scenarios/07-delivery-acceptance.md) |
+| Issue Closure | [问题关闭](team-email/references/external-scenarios/08-issue-closure.md) |
+
+每类都有可复制正文、对应附件下载和写作解读。只读选中的场景，替换方括号字段并删去无依据或不适用内容；核对收件人、时间、事实和实际附入的文件后再发送。手册另含 Greeting & Opening、Background & Context、Progress & Current Status、Supporting Evidence、Action Required、Closing 六个模块的写法与常见表达改进。
+
+```text
+使用 $team-email，给我 Issue Escalation 的完整英文模板和附件 Sample。
+说明适用阶段、触发条件、To/CC、发送前材料、期望反馈、写作解读和注意事项。
+不要代入真实项目，不发送邮件。
+```
+
+```text
+使用 $team-email，向合作伙伴请求确认测试规则。
+项目：……；To/CC：……；参考文件与版本：……
+当前理解与差异：……；需要对方回答：……；反馈期限：……（如有）
+请选择合适的沟通类型，给英文发送稿和中文核对稿；不编造附件已附或对方已批准。
+```
 
 ```text
 使用 $team-email
@@ -86,6 +117,9 @@
 ## 目录
 
 - [Skill 入口](team-email/SKILL.md)
+- [八类对外沟通手册与六个写作模块](team-email/references/external-communication.md)
+- [完整英文场景 Sample](team-email/references/external-scenarios)
+- [可填写的 CSV 附件 Sample](team-email/assets/attachments)
 - [场景模板与附件摘要](team-email/references/templates.md)
 - [审查、评分与最小修改](team-email/references/review-and-scoring.md)
 - [来信情绪、紧迫度与回复策略分析](team-email/references/incoming-analysis.md)
@@ -110,4 +144,4 @@
 
 ## English
 
-Reusable team collaboration skills. **team-email** analyzes incoming email tone, quoted evidence, confidence, urgency, and reply strategy. It also drafts professional emails with matching English and Chinese versions, role-aware templates, attachment summaries, and API/log redaction guidance, and supports evidence-based scoring, minimal editing, and technical evidence checks. Analysis-only requests do not produce reply drafts. Extract the ZIP into `~/.agents/skills/`, then invoke `$team-email` in Codex. Mailbox access requires a separately available authorized tool; the skill does not send email or modify the mailbox automatically.
+Reusable team collaboration skills. **team-email** provides eight external communication scenario packs with triggers, recipients, preparation, expected responses, complete English samples, CSV attachment templates, writing notes, and cautions. It also analyzes incoming email tone, evidence, confidence, urgency, and reply strategy, and supports bilingual drafting, evidence-based scoring, minimal editing, and technical evidence checks. Analysis-only requests do not produce reply drafts. Extract the ZIP into `~/.agents/skills/`, then invoke `$team-email` in Codex. Mailbox access requires a separately available authorized tool; the skill does not send email or modify the mailbox automatically.

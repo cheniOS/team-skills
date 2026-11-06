@@ -1,0 +1,3 @@
+DeliveryID,DeliverableAndVersion,Location,AcceptanceCriteria,ValidationEvidence,OpenItems,AcceptanceOwner,RequestedResponseBy,AcceptanceResult,AcceptanceStatus
+DEL-01,[Principal deliverable/version],[Verified location],[Criterion and reference],[Actual evidence],[Known limitations or verified none],[Acceptance owner],[Requested response deadline],Pending response,Pending acceptance
+DEL-02,[Supporting document/version],[Verified location],[Criterion and reference],[Actual evidence],[Known limitations or verified none],[Acceptance owner],[Requested response deadline],Pending response,Pending acceptance

@@ -1,0 +1,2 @@
+ClosureID,IssueReference,VersionAndEnvironment,VerifiedScope,VerificationResult,EvidenceReference,RemainingLimitations,ClosureConfirmationReference,ClosureStatus
+CLS-01,[Original issue],[Actual version/environment],[Checked behavior/cases],[Actual result],[Report/section or case ID],[Known limitations or verified none],Pending confirmation,Pending confirmation
