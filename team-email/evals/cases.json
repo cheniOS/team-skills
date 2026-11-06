@@ -75,14 +75,15 @@
         "覆盖五个分析字段；引用实际短句，说明测试依赖和两小时内的明确期限。",
         "可判断中性或礼貌催促，不凭today或截止时间断言愤怒、不满或焦虑。",
         "把握针对语气判断并给理由，紧迫度单列；不补造数据已经准备好或确定交付承诺。",
-        "只给中文分析及策略，不生成中英回复稿、不评分、不索要签名或岗位、不调用外部服务。"
+        "只给中文分析及策略，不生成中英回复稿、不评分、不索要签名或岗位、不调用外部服务。",
+        "题设09:00是当前时间，不冒充邮件发送或接收时间；缺少邮件时间时省略或标未提供。"
       ]
     },
     {
       "id": "incoming-quoted-speaker-attribution",
       "request": "使用 $team-email，只分析最新发件人的情绪，并结合引用判断跟进策略。当前为 12 Dec 2030, 10:00, UTC+00:00。最新邮件发件人 Quinn，收件人 Morgan，抄送 Taylor（我）；最新正文只有：Model-Z。引用一：11 Dec 2030，Morgan 问 Quinn：Which device model is affected? 引用二：09 Dec 2030，Jordan 写给 Morgan：This delay is unacceptable. We needed a conclusion by 10 Dec 2030. 线程没有后续关闭结论。",
       "checks": [
-        "最新Quinn的短回复不足以判断情绪，把握低；不能把Jordan的不满归给Quinn，也不能高把握判Quinn满意。",
+        "最新Quinn的短回复不足以判断情绪，把握低；不能把Jordan的不满归给Quinn，也不能高把握判Quinn满意；当前10:00不冒充最新邮件时间。",
         "引文有作者和历史语境；历史截止时间已过只支持核实状态，不直接宣布当前仍逾期或问题未解决。",
         "用户为知情抄送，建议核对实际负责人及结论，不默认回复全部或替团队承诺。",
         "不生成回复稿、不评分，不为已明确的分析任务索要写作要点。"
@@ -93,7 +94,7 @@
       "request": "使用 $team-email，逐封分析以下两封来信的情绪、证据、把握、紧迫度及回复建议，再合并待办，只分析。当前为 12 Dec 2030, 10:00, UTC+00:00。同一线程 Testing device，Taylor（我）均只在抄送，未被指派。09:00，Dee 写给 Pat：Could we get one test device today? We need it for validation. 09:30，Pat 回复 Dee 并抄送 Casey：Yes, one is available. @Casey please collect it from the lab. Thanks. 没有领取完成的信息。",
       "checks": [
         "分别判断Dee的礼貌请求/催促和Pat的配合，引用各自原话，不把两封当成独立未解决请求。",
-        "按09:30进展建议由Casey确认领取及后续验证，不再询问能否提供设备，也不把available写成已领取。",
+        "按09:30进展建议由Casey确认领取及后续验证，不再询问能否提供设备，也不把available写成已领取；没有完成记录只能说尚未确认，不能断言现实中仍未完成或未闭环。",
         "用户无需仅因被抄送就回复全部；可建议跟进实际行动人。",
         "紧迫度来自当天验证依赖而非负面情绪，无虚构领取时间或完整回复稿。"
       ]
